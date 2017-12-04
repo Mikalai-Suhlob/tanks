@@ -1,0 +1,26 @@
+{
+  "name": "battle-city-cover",
+  "version": "1.0.0",
+  "description": "Online game for browser",
+  "main": "index.html",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "postinstall": "mkdir dist",
+    "build-ts": "watchify -p [tsify] -t [uglifyify] main.ts -o dist/main.js",
+    "build-sass": "node-sass --style=compressed --sourcemap=none --watch styles -o dist",
+    "livereload": "livereload ./dist"
+  },
+  "author": "Mikalai Suhlob",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "livereload": "^0.6.3",
+    "node-sass": "^4.7.2",
+    "tsify": "^3.0.3",
+    "typescript": "^2.6.2",
+    "uglifyify": "^4.0.5",
+    "watchify": "^3.9.0"
+  }
+}
